@@ -18,7 +18,7 @@ export default {
 <style scoped>
 
 .btn-base{
-    background: #af6f6f;
+    background: #ffffff;
     color: #80818cfa;
     border-radius: 0px;
     text-transform: uppercase;
@@ -29,12 +29,13 @@ export default {
     letter-spacing: 1px;
     font-weight: bold;
     display: inline-block;
-    border-style: none;
+    border-style:solid
+    
 }
 
 .btn:link,
 .btn:visited{
-    background: #7e2323;
+    background: #ffffff;
     color: #80818cfa;
     border-radius: 0px;
     text-transform: uppercase;
