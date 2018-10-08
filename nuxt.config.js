@@ -33,6 +33,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+
   ],
 
   /*
@@ -42,7 +43,20 @@ module.exports = {
     'bootstrap-vue/nuxt',
 
     // Or if you have custom bootstrap CSS...
-    ['bootstrap-vue/nuxt', { css: false }],
+    ['bootstrap-vue/nuxt', { css: false }], 
+
+    ['nuxt-fontawesome', {
+      component: 'fa', 
+      imports: [
+        //import whole set
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['fas']
+        }
+      ]
+    }]
+
+    
   ],
 
   /*

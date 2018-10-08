@@ -18,8 +18,8 @@ export default {
 <style scoped>
 
 .btn-base{
-    background: #e74132;
-    color: #ffffff;
+    background: #af6f6f;
+    color: #80818cfa;
     border-radius: 0px;
     text-transform: uppercase;
     font-size: 11px;
@@ -34,8 +34,8 @@ export default {
 
 .btn:link,
 .btn:visited{
-    background: #e74132;
-    color: #ffffff;
+    background: #7e2323;
+    color: #80818cfa;
     border-radius: 0px;
     text-transform: uppercase;
     font-size: 11px;
@@ -50,13 +50,9 @@ export default {
 
 .btn:hover{
     transform: translateY(-1px);
-    background: #b72315;
-    color: #f0f0f0;
 }
 
 .btn:active{
     transform: translateY(-1px);
-    background: #e74132;
-    color: #ffffff;
 }
 </style>

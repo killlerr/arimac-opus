@@ -117,6 +117,7 @@ body{
     text-transform: uppercase;
     color: #9f9f9f;
     border-style: none;
+    border-radius: 0;
 
     /* &:not(:placeholder-shown)
       + span
