@@ -17,7 +17,7 @@
 
 <!-- profile -->
         <div class="container d-flex justify-content-center d-none">
-        <b-nav-item href="profile p-0">
+        <b-nav-item href="profile" class="p-0">
         <div class="row no-gutters">
           <div class="col-6">
             <img src="img-profile-picture.jpeg" class="img-circle img-profile" alt="Cinque Terre">
@@ -33,7 +33,7 @@
           <b-collapse is-nav id="nav_collapse">
           <b-nav-item href="messageArea" class="p-0"><fa :icon="fas.faComments"  :style="{ color: '' }" class="fa-lg m-3"/></b-nav-item>
 
-          <b-nav-item-dropdown right>
+          <b-nav-item-dropdown right class="p-0">
             <!-- Using button-content slot -->
             <template slot="button-content">
               <em class=""><fa :icon="fas.faEllipsisV"  :style="{ color: '' }" class="fa-lg m-3 justify-content-center" /></em>
@@ -143,7 +143,7 @@ export default {
   vertical-align: top
 }
 
-.p-0{
+.p-0 .nav-link{
   padding: 0 !important;
 }
 
