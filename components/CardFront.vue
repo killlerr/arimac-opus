@@ -4,24 +4,33 @@
         <b-card class="card-front fit-content" @click="onAnswer">
             <div class="card-content">
               <div class="row card-header no-gutters">
-                <div class="col-3">
-                  <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}"/></p>
+                <div class="col-2 text-right">
+                  <div class="pr-3 pt-3">
+                    <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}" class="fa-2x"/></p>
+                  </div>
                 </div>
-              <div class="col-9 text-left">
-                <div class="row no-gutters">
+              <div class="col-10 text-left">
+                <div class="pt-3">
+                <div class="row no-gutters task-name">
                     <strong>{{taskName}}</strong>
                 </div>
-                <div class="row no-gutters">
-                    <small>{{projectName}}</small>  
+                <div class="row no-gutters project-name">
+                    {{projectName}} 
+                </div>                   
                 </div>                  
               </div>
               </div>
               <div class="row card-footer no-gutters" v-bind:style="{'background-color':bgColor}">
                 <div class="col-6 text-left">
-                  <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-size" />
-                  {{daysLeft}}           
+                  <div class="d-flex fex-column">
+                  <div class="pt-2">
+                  <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-lg" />
+                  </div>
+
+                  <div class="pl-2 days-left pt-1">{{daysLeft}}</div>
+                  </div>
                 </div>
-                <div class="col-6 text-right">
+                <div class="col-6 text-right due-date pt-2">
                   {{dueDate}}
                 </div>
               </div>
@@ -43,7 +52,7 @@ export default {
     data(){
         return{
         bgColor: '#ff5a4e',
-        taskName: 'default‑ Lorem ,',
+        taskName: 'Task default‑ Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
         projectName: 'default Lorem ipsum dolor sit amet',
         dueDate: 'June 15th 2016',
         daysLeft: '2 days left'
@@ -93,5 +102,32 @@ export default {
     height: 3.33rem;
 }
 
+/*Text styling*/
+
+.task-name{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: normal;
+
+}
+
+.project-name{
+  font-weight: bold;
+  margin-top: 1em;
+  color: #b8b8bb;
+  font-size: 11px;
+}
+
+.days-left{
+  font-size: 18px;
+}
+
+.due-date{
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+/*Text styling*/
 
 </style>

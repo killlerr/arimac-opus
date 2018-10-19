@@ -1,5 +1,6 @@
 <template>
-    <div class="">
+    <!-- flip-container >> this is the flipping container -->
+    <div class="flip-container">   
 
 
     <!-- Vue Flip -->
