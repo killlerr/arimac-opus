@@ -1,5 +1,5 @@
 <template>
-    <div class="container flip-container">
+    <div class="">
 
 
     <!-- Vue Flip -->

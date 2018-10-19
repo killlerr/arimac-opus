@@ -7,7 +7,7 @@
     </div>
 
     
-        <div class="p-2">
+        <div class="pb-2 pt-2">
             <Reusable-button label="Add new task card" class="btn-add-new-task" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
         </div>
         <div class="margin-top-from-btn">
