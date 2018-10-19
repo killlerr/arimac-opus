@@ -1,6 +1,6 @@
 <template>
-    <div class="row">
-        <div>
+    <div>
+        <div class="p-2">
         <b-card class="card-back" v-bind:style="{'background-color':bgColor}" @click="onNextQuestion">
             <div class="col">
             <div class="row">
@@ -42,21 +42,19 @@ export default {
 
 <style>
 
-.card-back{
-    position: relative;
-    display: flex;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    height: 9.99rem;
-    max-height: 14rem;
-    min-width: 0;
+.card-body {
     width: 100%;
-    padding: 0;
+    height: 100%;
+    padding: 0px;
+}
+
+.card-back{
+
+    width: 100%;
     border-radius: 0.25rem;
     box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2);
     word-wrap: break-word;
-    margin: 1.3rem 0 1.3rem 0;
+    height: 9.99rem;
 }
 
 </style>
