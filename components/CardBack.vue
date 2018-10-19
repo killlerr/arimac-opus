@@ -5,8 +5,10 @@
             <div class="col">
             <div class="row">
                 <div class="col-6">
-                    <h3>Completed Card</h3>
-                    <p><small>This line of text is meant to be treated as fine print.</small></p>
+                    <div class="pt-5 pl-2 txt-complete">
+                        <h4>Completed Card</h4>
+                        <p class="info-complete">Project Number Two Lorem ip sumdolor sit amet,Project Number Two Lorem ipsum dolor sit amet</p>
+                    </div>
                 </div>
                 <div class="col-6">
                     <b-button class="filter-button" :class="{toggled: isToggled}" @click="isToggled = !isToggled">
@@ -57,5 +59,14 @@ export default {
     height: 9.99rem;
 }
 
+.txt-complete{
+    color: #ffffff;
+}
+
+.info-complete{
+    font-size: 10px;
+    color: #ffffffa8;
+    word-wrap: break-word;
+}
 </style>
 
