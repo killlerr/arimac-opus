@@ -1,143 +1,137 @@
 <template>
-<div class="bg-wrap">
-    <div class="row">
-        <div class="col-7 img-login">
-
-        </div>
-        <div class="col-5">
-            <div class="login-box">
-                <b-img src="/logo-opus.jpg" class="logo" fluid alt="Responsive image" />
-                    
-                    <div class="row row-gap">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="usrName" placeholder="email">
+    <section>
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-lg-8 col-md-5 col-sm-12 d-none d-md-block bg-left">
+                    <div class="row justify-content-md-center txt-copyright">
+                        <p class="text-muted copyright"><strong>Copyright © 2018 Arimac Lanka. All rights reserved.</strong></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-12 bg-right ">
+                    <div class="row justify-content-md-center">
+                    <div class="col-lg-9 col-md-8 col-sm-7 col-xs-6 box-container">
+                        <div class="row justify-content-md-center my-5">
+                            <b-img src="/logo-opus.jpg" fluid alt="OPUS" />
+                        </div>
+                        <div class="row justify-content-md-center my-4">
+                            <div class="form-group">
+                                <ReusableInput type="text" value="" placeholder="email" @inputEvent="inputEvent"></ReusableInput>
+                                <ReusableInput type="password" value="" placeholder="password" @inputEvent="inputEvent"></ReusableInput>
+                            </div>
+                        </div>
+                        <div class="row justify-content-md-center">
+                            <Reusable-button label="Login" class="btn-login" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center d-block d-md-none fixed-bottom">
+                          <p class="text-muted copyright mx-3">Copyright © 2018 Arimac Lanka. All rights reserved.</p>
                         </div>
                     </div>
-                    <div class="row row-gap">
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="usrPassword" placeholder="password">
-                        </div>
-                    
                     </div>
-                    
-                    <div class="row row-gap">
-                        <Base-button label="Login" :onClick="doSomething"></Base-button>
-                    </div>
-                    
+                </div>
             </div>
         </div>
-
-    </div>    
-</div>
-
+    </section> 
 </template>
 
 <script>
-import BaseButton from '~/components/BaseButton.vue'
-import BaseInputText from '~/components/BaseInputText.vue'
-import BaseOpusLogo from '~/components/BaseOpusLogo.vue'
+import ReusableButton from "~/components/ReusableButton.vue";
+import ReusableInput from "~/components/ReusableInput.vue"
 
 export default {
-    data() {
-        return{
-            userId:''
-        }
+  data() {
+    return {
+      btnBgColor: "#e74132",
+      btnColor: "#fff"
+    };
+  },
+
+  components: {
+    ReusableButton,
+    ReusableInput
+  },
+  methods: {
+    doSomething: function() {
+      console.log("LogIn Clicked");
+      this.$router.push("homeUser");
     },
-    components: {
-        BaseButton,
-        BaseInputText,
-        BaseOpusLogo
-    },
-    methods: {
-        doSomething: function () {
-            // <nuxt-link to="appTasks"></nuxt-link>
-            this.$router.push('/users/' + this.userId)
+        inputEvent(e) {
+            // console.log(e);
         }
-    }
-}
+  }
+};
 </script>
 
 
 <style>
 * {
-    padding: 0;
-    margin: 0 ;
-    box-sizing: inherit;
-    /*change the box-modle to where borders and paddings are no longer added to total width or height*/
-}
-html{
-    font-size: 62.5%;
+  /* outline: 0; */
+  font-family: Montserrat, sans-serif;
 }
 
-body{
-    font-family: "Lato", sans-serif;
-    background-color: #ffffff;
-    line-height: 1.7;
-    box-sizing: border-box;
-    /*change the box-modle to where borders and paddings are no longer added to total width or height*/
-    margin-left: 12rem;
-    margin-right: 12rem;
-    
-
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
-.bg-wrap{
-    background-color: #e6ebf1 ;
+body {
+  overflow-y: hidden;
 }
 
-.img-login {
-    height: 100vh;
+section, .bg-left, .bg-right{
+  height: 100vh;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.bg-left {
+    background: url("/img-login.jpg");
     background-size: cover;
-    /*What everth width of the image it fits into the view-port*/
-    background-image: url(/img-login.jpg);
-    background-position: top;
 }
 
-.login-box{
-    height: 100vh;
-    background-size: cover;
-    padding-left: 10rem;
-    padding-right: 10rem;
-    padding-top: 20rem;
+.txt-copyright{
+  box-sizing: border-box;
+  margin: 95vh 5vh 0 5vh;
+}
+
+.copyright{
+    font-size: 0.8em;
     text-align: center;
+    overflow: hidden;
 }
+
+.bg-right {
+  background-color: #e6ebf1;
+}
+
+.box-container {
+  margin: 50px;
+  justify-content: center;
+}
+
 
 .form-group{
-    width: 100%;
-}
-
-.form-control{
-
-    width: 100%;
-    font-size: 11px;
-    padding: 2.7rem;
-    font-family:sans-serif;
-    letter-spacing: 1px;
-    display: inline-block;
-    text-transform: uppercase;
-    color: #9f9f9f;
-    border-style: none;
-    border-radius: 0;
-
-    /* &:not(:placeholder-shown)
-      + span
-        color #5A667F;
-        transform: translateY(-26px) scale(.75); */
-}
-
-.form-control:visited{
-    color: #5A667F;
-    transform: translateY(-26px) scale(.75);
-    border-left: 6px solid red;
-}
-
-.row-gap{
-    padding-top: 1rem;
-}
-
-.logo{
-    margin-bottom: 3rem;
+  width: 100%;
 }
 
 
+@media (max-width: 768px) {
+  * {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 480px) {
+  * {
+    justify-content: center;
+  }
+
+
+}
 </style>

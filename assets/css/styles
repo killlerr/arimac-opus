@@ -1,0 +1,6 @@
+export const colors={
+    opusRed:'#ff5a4e',
+    opusGreen:'#39c379',
+    opusBlue:'#34c0dd',
+    fontColor:#80818cfa
+}

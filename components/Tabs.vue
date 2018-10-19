@@ -1,6 +1,6 @@
 <template>  
 <div>
-<b-card no-body>
+<b-card no-body class="img-cover">
   <b-tabs card>
     <b-tab title="Task" active class="px-2">
       <holder-tasks></holder-tasks>
@@ -32,6 +32,8 @@ export default {
     background-color: #ffffff!important;
     box-shadow: 0px 1px 3px #efeeee, 0px 1px 2px #bfbfbf;
     padding: 0.5rem;
+    border: 0;
+    height: auto;
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
@@ -39,6 +41,7 @@ export default {
     background-color: #fff;
     border-width: 0;
     border-bottom: 5.5px solid #ff5a4e;
+    
     
 }
 
@@ -49,6 +52,7 @@ export default {
     text-align: center;
     border-bottom: 5px solid transparent;
     text-align: center;
+    font-size: 1rem;
     
 }
 
@@ -65,9 +69,20 @@ export default {
     border-bottom: 0;
 }
 
-/* .tab-content{
-  
-}Style content of the tab */
+.tab-content{
+
+
+}
+
+
+
+
+.card-body:after {
+
+}
+
+/*Background*/
+
 
 </style>
 

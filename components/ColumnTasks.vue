@@ -4,28 +4,33 @@
     <blockquote class="blockquote text-left bq">Tasks</blockquote>
     <footer class="blockquote-footer bqf">Lorem ipsum dolor sit amet consectetur</footer>
     
-                    <div class="row row-gap">
-                        <ButtonAddNewTask label="Add new task card" :onClick="doSomething"></ButtonAddNewTask>
-                        
-                    </div>
-    
+        <div>
+            <CardModalNewTaskCard></CardModalNewTaskCard>
+        </div>
+        <div class="margin-top-from-btn">
+            <CardFlip></CardFlip>
+            <CardFlip></CardFlip>
+        </div>
+
+                    
 </div>
 
 </template>
 
 <script>
-import ButtonAddNewTask from '~/components/ButtonAddNewTask.vue'
-
+import CardModalNewTaskCard from '~/components/CardModalNewTaskCard.vue'
+import CardFlip from '~/components/CardFlip.vue'
 
 export default {
     components: {
-        ButtonAddNewTask
+        CardFlip,
+
+        CardModalNewTaskCard
 
     },
     methods: {
         doSomething: function () {
-            // <nuxt-link to="appTasks"></nuxt-link>
-            
+            console.log("Added New Card")
         }
     }
 }
@@ -45,4 +50,15 @@ export default {
 .bqf{
     font-size: 19px;
 }
+
+.btn-base{
+    width: 180% !important;
+}
+
+
+
+.margin-top-from-btn{
+    margin-top: 6.6rem;
+}
+
 </style>

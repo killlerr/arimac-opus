@@ -1,12 +1,15 @@
 <template>
-    <div class="row">
-        <div class="col-md-4 d-flex justify-content-center">
+    <div class="row mx-3">
+        <div>
+
+        </div>
+        <div class="col-md-4 col-s-12 justify-content-center">
            <Column-tasks></Column-tasks>
         </div>        
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-4 col-s-12 justify-content-center">
            <Column-overdue></Column-overdue>
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
+        <div class="col-md-4 col-s-12 justify-content-center">
            <Column-completed></Column-completed>
         </div>
     </div>

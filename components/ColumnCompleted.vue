@@ -2,17 +2,21 @@
 <div>
     <blockquote class="blockquote text-left bq">Completed</blockquote>
     <footer class="blockquote-footer bqf">Lorem ipsum dolor sit amet consectetur</footer>
-    <BaseCard></BaseCard>
-    <BaseCard></BaseCard>
-    <BaseCard></BaseCard>
+    <div>
+        <CardFlip></CardFlip>
+    </div>
+    
+ 
 </div>
 </template>
 
 <script>
-import BaseCard from '~/components/BaseCard.vue'
+import CardFlip from '~/components/CardFlip.vue'
+
 export default {
+
     components:{
-        BaseCard
+        CardFlip,
     }
     
 }
@@ -30,4 +34,5 @@ export default {
 .bqf{
     font-size: 19px;
 }
+
 </style>
