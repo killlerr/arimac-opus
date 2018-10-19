@@ -24,7 +24,7 @@ export default {
 
 .blockquote {
     margin-bottom: 0rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 

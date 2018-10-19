@@ -1,105 +1,67 @@
-<template>
-  <div>
-    <b-navbar toggleable="md" type="dark" variant="dark" class="header fixed-top py-2">
-      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand href="homeUser"><img src="logo-opus-nav.jpg" class="logo-opus ml-3" alt="Responsive image"> </b-navbar-brand>
-      <b-navbar-nav class="ml-auto 	">
-        <div class="container d-flex justify-content-center d-none d-sm-block d-md-none">
-        <b-nav-item href="profile">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <img src="img-profile-picture.jpeg" class="img-circle img-profile" alt="Cinque Terre">
-          </div>
-          <div class="col-6 flex-column name-box d-none d-sm-block">
-            <div class="text-light mx-2 user-name">{{userName}}</div>
-            <div class="text-secondary mx-2 user-power">{{userPower}}</div>
-          </div>
-        </div>
-        </b-nav-item>         
-        </div>
-      </b-navbar-nav>
-      <b-collapse is-nav id="nav_collapse">
-      <b-nav-form class="search-form mx-5">
-        <b-form-input  id="input-large" size="sm" class="input-search" type="text" placeholder="Search Cards" style="font-family:Arial, FontAwesome" />
-      </b-nav-form>
-
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto mx-2">
-
-          
-          <b-nav-item href="messageArea" class="mx-3"><fa :icon="fas.faComments"  :style="{ color: '' }" class=""/></b-nav-item>
-
-            <b-nav-item-dropdown right>
-            <!-- Using button-content slot -->
-            <template slot="button-content">
-              <em class="mx-3"><fa :icon="fas.faEllipsisV"  :style="{ color: '' }" class="" /></em>
-            </template>
-            <b-dropdown-item href="settings">Settings</b-dropdown-item>
-            <b-dropdown-item href="/">Signout</b-dropdown-item>
-          </b-nav-item-dropdown>
-    </b-navbar-nav>
-    </b-collapse>
-
-
-    </b-navbar>
-  </div>
+<template>  
+<div>
+<b-card no-body class="img-cover">
+  <b-tabs card>
+    <b-tab title="Task" active class="p-2 m-2">
+      <holder-tasks></holder-tasks>
+    </b-tab>
+    <b-tab title="Attendence" class="p-2 m-2">
+      <holder-attendence></holder-attendence>
+    </b-tab>
+  </b-tabs>
+</b-card>
+</div>
 </template>
 
 <script>
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import HolderTasks from '../components/HolderTasks'
+import HolderAttendence from '../components/HolderAttendence'
 export default {
-  data() {
-    return {
-      userName: "Indika",
-      userPower: "User"
-    };
-  },
-  computed: {
-    fas() {
-      return fas;
-    },
-    faGithub() {
-      return faGithub;
+    components:{
+        HolderTasks,
+        HolderAttendence
     }
-  }
-};
+}
 </script>
 
-
 <style>
-.header {
-  padding: 0;
-  padding-top: 0.1rem;
-  background-color: #2a2e43 !important;
-  width: 100%;
+
+.card-header{
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px #efeeee, 0px 1px 2px #bfbfbf;
+    padding: 0.5rem;
+    border: 0;
+    height: auto;
 }
 
-.logo-opus {
-  height: 2.8rem;
-  width: auto;
+.nav-link{
+    color:#80818cfa;
+    font-weight: bold;
+    height: 3rem;
+    text-align: center;
+    font-size: 1rem;   
 }
 
-.img-profile {
-  height: 3rem;
-  width: auto;
-  align-content: center;
-  border-radius: 50%;
-  margin-bottom: 5px;
+.card-header-tabs {
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+    margin-bottom: -0.45rem;
+    border-bottom: 0;
 }
 
-.input-search{
-    font-size: 16px;
-    padding-right: 4rem;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    font-family:sans-serif;
-    font-variant-position: normal;
-    display: inline-block;
-    background-color: #5d6177;
-    color: #9f9f9f;
-    border-style: none;
-    border-radius: 0;
-    vertical-align: top;
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    border-width: 0;
+    border-bottom: 5.5px solid #ff5a4e;
+    color: #495057;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #fff;
+    border-width: 0;
+    border-bottom: 5.5px solid #ff5a4e;
+    
+    
 }
 </style>

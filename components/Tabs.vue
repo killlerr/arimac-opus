@@ -39,7 +39,7 @@ export default {
     font-weight: bold;
     height: 3rem;
     text-align: center;
-    font-size: 1rem;   
+    font-size: 17px;   
 }
 
 .card-header-tabs {

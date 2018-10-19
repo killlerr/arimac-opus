@@ -41,6 +41,7 @@ export default {
     border: none;
     background-color: #ffffff;
     color: #80818cfa;
+
 }
 
 .card-btn{
@@ -55,7 +56,7 @@ export default {
     border-radius: 0.25rem;
     box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2);
     word-wrap: break-word;
-    margin: 1.3rem 0 1.3rem 0;
+    margin: 2rem;
 }
 
 </style>
