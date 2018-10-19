@@ -1,11 +1,11 @@
 <template>  
-<div>
+<div class="pb-4">
 <b-card no-body class="img-cover">
   <b-tabs card>
-    <b-tab title="Task" active class="p-2 m-2">
+    <b-tab title="Task" active class="">
       <holder-tasks></holder-tasks>
     </b-tab>
-    <b-tab title="Attendence" class="p-2 m-2">
+    <b-tab title="Attendence" class="">
       <holder-attendence></holder-attendence>
     </b-tab>
   </b-tabs>

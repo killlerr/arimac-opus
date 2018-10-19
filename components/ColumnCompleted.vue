@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="pb-3">
+    <div class="py-3">
     <blockquote class="blockquote text-left bq">Tasks</blockquote>
     <footer class="blockquote-footer bqf">Lorem ipsum dolor sit amet consectetur</footer>
     </div>
