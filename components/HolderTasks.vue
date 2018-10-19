@@ -1,4 +1,5 @@
 <template>
+    <div class="container-fluid">
     <div class="row mx-3">
         <div class="col-lg-4 col-s-12 justify-content-center">
            <Column-tasks></Column-tasks>
@@ -9,6 +10,7 @@
         <div class="col-lg-4 col-s-12 justify-content-center">
            <Column-completed></Column-completed>
         </div>
+    </div>
     </div>
 </template>
 

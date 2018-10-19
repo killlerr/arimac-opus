@@ -1,7 +1,9 @@
 <template>
 <div>
-    <blockquote class="blockquote text-left bq">Completed</blockquote>
+    <div class="pb-3">
+    <blockquote class="blockquote text-left bq">Tasks</blockquote>
     <footer class="blockquote-footer bqf">Lorem ipsum dolor sit amet consectetur</footer>
+    </div>
     <div>
         <CardFlip></CardFlip>
     </div>

@@ -1,67 +1,97 @@
-<template>  
-<div>
-<b-card no-body class="img-cover">
-  <b-tabs card>
-    <b-tab title="Task" active class="p-2 m-2">
-      <holder-tasks></holder-tasks>
-    </b-tab>
-    <b-tab title="Attendence" class="p-2 m-2">
-      <holder-attendence></holder-attendence>
-    </b-tab>
-  </b-tabs>
-</b-card>
-</div>
+<template>
+
+      <div>
+        <b-card class="card-front fit-content" @click="onAnswer">
+            <div class="card-content">
+              <div class="row card-header">
+                <div class="col-3">
+                  <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}"/></p>
+                </div>
+              <div class="col-9 text-left">
+                <div class="row">
+                    <strong>{{taskName}}</strong>
+                </div>
+                <div class="row">
+                    <small>{{projectName}}</small>  
+                </div>                  
+              </div>
+              </div>
+              <div class="row card-footer" v-bind:style="{'background-color':bgColor}">
+                <div class="col-6 text-left">
+                  <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-size" />
+                  {{daysLeft}}           
+                </div>
+                <div class="col-6 text-right">
+                  {{dueDate}}
+                </div>
+              </div>
+            </div>
+        </b-card>
+      </div>
+
+
+
+
 </template>
 
 <script>
-import HolderTasks from '../components/HolderTasks'
-import HolderAttendence from '../components/HolderAttendence'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
+
 export default {
-    components:{
-        HolderTasks,
-        HolderAttendence
+    data(){
+        return{
+        bgColor: '#ff5a4e',
+        taskName: 'default‑ Lorem ,',
+        projectName: 'default Lorem ipsum dolor sit amet',
+        dueDate: 'June 15th 2016',
+        daysLeft: '2 days left'
+        }
+    },
+    methods:{
+            onAnswer(){
+            this.$emit('answered');
+            }
+    },
+
+    computed: {
+      fas () {
+         return fas
+      },
+      faGithub () {
+         return faGithub
+      }
     }
 }
 </script>
 
-<style>
+<style scoped>
+
+.card-body {
+    width: 100%;
+    height: 100%;
+
+    padding: 0px;
+}
+
+.card-front{
+
+    width: 100%;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+    word-wrap: break-word;
+}
 
 .card-header{
-    background-color: #ffffff;
-    box-shadow: 0px 1px 3px #efeeee, 0px 1px 2px #bfbfbf;
-    padding: 0.5rem;
-    border: 0;
-    height: auto;
+    color: #80818cfa;
+    height: 6.66rem;
 }
 
-.nav-link{
-    color:#80818cfa;
-    font-weight: bold;
-    height: 3rem;
-    text-align: center;
-    font-size: 1rem;   
+.card-footer{
+    color: #ffffff;
+    height: 3.33rem;
 }
 
-.card-header-tabs {
-    align-items: center;
-    justify-content: center;
-    margin-right: 2rem;
-    margin-bottom: -0.45rem;
-    border-bottom: 0;
-}
 
-.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
-    border-width: 0;
-    border-bottom: 5.5px solid #ff5a4e;
-    color: #495057;
-}
-
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: #495057;
-    background-color: #fff;
-    border-width: 0;
-    border-bottom: 5.5px solid #ff5a4e;
-    
-    
-}
 </style>

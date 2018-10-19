@@ -1,11 +1,14 @@
 <template>
 
 <div>
+    <div class="pb-3">
     <blockquote class="blockquote text-left bq">Tasks</blockquote>
     <footer class="blockquote-footer bqf">Lorem ipsum dolor sit amet consectetur</footer>
+    </div>
+
     
-        <div>
-            <CardModalNewTaskCard></CardModalNewTaskCard>
+        <div class="p-2">
+            <Reusable-button label="Add new task card" class="btn-add-new-task" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
         </div>
         <div class="margin-top-from-btn">
             <CardFlip></CardFlip>
@@ -18,14 +21,14 @@
 </template>
 
 <script>
-import CardModalNewTaskCard from '~/components/CardModalNewTaskCard.vue'
+import ReusableButton from '~/components/ReusableButton.vue'
 import CardFlip from '~/components/CardFlip.vue'
 
 export default {
+
     components: {
         CardFlip,
-
-        CardModalNewTaskCard
+        ReusableButton
 
     },
     methods: {
@@ -51,14 +54,14 @@ export default {
     font-size: 19px;
 }
 
-.btn-base{
-    width: 180% !important;
-}
 
 
-
-.margin-top-from-btn{
-    margin-top: 6.6rem;
+.btn-add-new-task{
+    border-radius: 0.25rem;
+    box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    background-color: #ffffff;
+    color:#80818cfa;
 }
 
 </style>
