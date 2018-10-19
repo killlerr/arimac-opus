@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="p-2">
+        <div class="pb-2 pt-2">
         <b-card class="card-back" v-bind:style="{'background-color':bgColor}" @click="onNextQuestion">
             <div class="col">
             <div class="row">

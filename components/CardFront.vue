@@ -1,22 +1,22 @@
 <template>
 
-      <div class="p-2">
+      <div class="pb-2 pt-2">
         <b-card class="card-front fit-content" @click="onAnswer">
             <div class="card-content">
-              <div class="row card-header">
+              <div class="row card-header no-gutters">
                 <div class="col-3">
                   <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}"/></p>
                 </div>
               <div class="col-9 text-left">
-                <div class="row">
+                <div class="row no-gutters">
                     <strong>{{taskName}}</strong>
                 </div>
-                <div class="row">
+                <div class="row no-gutters">
                     <small>{{projectName}}</small>  
                 </div>                  
               </div>
               </div>
-              <div class="row card-footer" v-bind:style="{'background-color':bgColor}">
+              <div class="row card-footer no-gutters" v-bind:style="{'background-color':bgColor}">
                 <div class="col-6 text-left">
                   <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-size" />
                   {{daysLeft}}           
