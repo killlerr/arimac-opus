@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <div class="col-7">
+  <div>
+          <div class="col-7">
             <div class="row">
                 <div class="top-box card-border">
-<blockquote class="blockquote text-right">
-  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote>
+                  <blockquote class="blockquote text-right">
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
 
-<div class="row">
-<div class="col-4">
+            <div class="row">
+          <div class="col-4">
 
 </div>
 

@@ -1,34 +1,81 @@
 <template>
     <div>
+        <div class="container-fluid p-3">
+            <div class="row">
+                <div class="col-md-7">
+                    <div>
+                        <b-card>
+                            <div class="row">
+                                <div class="col-12">
+                                <blockquote class="blockquote text-left">
+                                    <p class="mb-0">What happen Today Attendance</p>
+                                    <footer class="blockquote-footer">Lorem ipsum dolor sit amet, consectetur</footer>
+                                </blockquote>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="py-2"> 
+                                        <b-dropdown id="ddown1" text="Today I'm" class="dropdown-top">
 
+                                        </b-dropdown>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 py-2">
+                                    <div class="py-3">
+                                        <b-form-select id="exampleInput3"
+                                        :options="attendenceCatagory"
+                                        required
+                                        v-model="form.attendenceCatagory"
+                                        class="attendence-slect">
+                                        </b-form-select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 py-2">
+                                    <div class="py-3">
+                                        <Reusable-button label="Set" class="btn-login" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </b-card>
+                      
+                    </div>
+                </div>
+                <div class="col-md-5">
 
-    <!-- Vue Flip -->
-    <div class="bg">
-
-                <transition name="flip" mode="out-in">
-                    <component :is="mode" @answered="mode='appAnswer'" @confirmed="mode = 'appQuestion'"></component>
-                </transition>
-
-
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Vue Flip -->
-
-</div>
 </template>
 
+
 <script>
-import CardFront from '../components/CardFront.vue'
-import CardBack from '../components/CardBack.vue'
+import ReusableButton from "~/components/ReusableButton.vue";
 
 export default {
     data() {
         return {
-            mode: 'app-question'
-        }
+            btnBgColor: "#e74132",
+            btnColor: "#fff",
+            form:{
+                attendenceCatagory: null
+            },
+            attendenceCatagory: [
+                { text: 'Select an attendence catagory', value: null },
+                'Present', 'Absent', 'Working from home'
+            ],
+      show: true
+        };
     },
     components:{
-            appQuestion: CardFront,
-            appAnswer: CardBack
+        ReusableButton
+    },
+    methods: {
+        doSomething: function() {
+            console.log("LogIn Clicked");
+            this.$router.push("homeUser");
+        }
     }
 }
 </script>
@@ -36,57 +83,24 @@ export default {
 
 <style>
 
-/* entire container, keeps perspective */
-.flip-container {
-	perspective: 1000px;
+/* .drop-middle btn-group > .btn:first-child {
+    width: 100%;
+} */
+
+.dropdown-top, .btn-group > .btn:first-child {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 2px;
+    border-radius: 0;
 }
 
-
-/*Vue Flip */
-
-
-    .flip-enter {
-        /*transform: rotateY(0deg);*/
-    }
-
-    .flip-enter-active {
-        animation: flip-in  0.3s ease-out forwards;
-    }
-
-    .flip-leave {
-        /*transform: rotateY(0deg);*/
-    }
-
-    .flip-leave-active {
-        animation: flip-out 0.3s ease-out forwards;
-    }
-
-    @keyframes flip-out {
-        from {
-            transform: rotateY(0deg);
-        }
-        to {
-            transform: rotateY(90deg);
-        }
-    }
-
-    @keyframes flip-in {
-        from {
-            transform: rotateY(90deg);
-        }
-        to {
-            transform: rotateY(0deg);
-        }
-    }
-
-
-
-/*Vue Flip */
-
-
-.bg{
-  background-color: aqua;
+.attendence-slect, .custom-select{
+    height: calc(2.25rem + 16px);
+    border-radius: 0;
 }
 
+.btn-login{
+    padding: 17px;
+}
 </style>
-

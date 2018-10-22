@@ -12,7 +12,7 @@
               <div class="col-10 text-left">
                 <div class="pt-3">
                 <div class="row no-gutters task-name">
-                    <strong>{{taskName}}</strong>
+                    {{taskName}}
                 </div>
                 <div class="row no-gutters project-name">
                     {{projectName}} 
@@ -105,9 +105,8 @@ export default {
 /*Text styling*/
 
 .task-name{
-    font-weight: bold;
+    /* font-weight: 600; */
     font-size: 15px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     line-height: normal;
 
 }

@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="py-3">
-    <blockquote class="blockquote text-left bq">Tasks</blockquote>
+    <blockquote class="blockquote text-left bq">Completed</blockquote>
     <footer class="blockquote-footer bqf">Lorem ipsum dolor sit amet consectetur</footer>
     </div>
     <div>
