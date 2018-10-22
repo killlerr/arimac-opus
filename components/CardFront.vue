@@ -6,7 +6,7 @@
               <div class="row card-header no-gutters">
                 <div class="col-2 text-right">
                   <div class="pr-3 pt-3">
-                    <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}" class="fa-2x"/></p>
+                    <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}" class="fa-lg"/></p>
                   </div>
                 </div>
               <div class="col-10 text-left">
@@ -24,7 +24,7 @@
                 <div class="col-6 text-left">
                   <div class="d-flex fex-column">
                   <div class="pt-1 pr-2">
-                  <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-lg" />
+                  <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-sm" />
                   </div>
 
                   <div class="pl-2 days-left pt-1">{{daysLeft}}</div>

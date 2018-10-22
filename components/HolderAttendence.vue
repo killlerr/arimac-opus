@@ -58,7 +58,7 @@
                             </div>
                             <div class="p-3">
                                 <div class="form-group">
-                                    <textarea class="type-here form-control rounded-0" id="exampleFormControlTextarea1" rows="10" placeholder="Type here"></textarea>
+                                    <textarea class="type-here form-control rounded-0" id="exampleFormControlTextarea1" rows="7" placeholder="Type here"></textarea>
                                 </div>
                             </div>
                         </b-card>

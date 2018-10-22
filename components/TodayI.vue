@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-9 border-today-right">
                     <div class="everything-center">
-                        <p class="t-a-c">Today I'm</p>
+                        <p>Today I'm</p>
                     </div>
                 </div>
             </div>
@@ -23,6 +23,11 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 
 export default {
+    data(){
+        return{
+            bgColor:'#80818cfa'
+        }
+    },
     computed: {
       fas () {
          return fas

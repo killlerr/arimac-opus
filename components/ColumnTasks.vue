@@ -8,14 +8,13 @@
 
     
         <div class="pb-2 pt-2">
-            <Reusable-button label="Add new task card" class="btn-add-new-task" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
+            <ModalTaskCardAdd></ModalTaskCardAdd>
         </div>
         <div class="margin-top-from-btn">
             <CardFlip></CardFlip>
             <CardFlip></CardFlip>
         </div>
-
-                    
+                 
 </div>
 
 </template>
@@ -23,12 +22,22 @@
 <script>
 import ReusableButton from '~/components/ReusableButton.vue'
 import CardFlip from '~/components/CardFlip.vue'
+import ModalTaskCardAdd from '~/components/ModalTaskCardAdd.vue'
 
 export default {
+    data(){
+        return{
+            btnBgColor: '#fff',
+            btnColor: '#000',
+            bgColor: '#34c0dd',
+            modalShow: false
+        }
+    },
 
     components: {
         CardFlip,
-        ReusableButton
+        ReusableButton,
+        ModalTaskCardAdd
 
     },
     methods: {
@@ -56,12 +65,15 @@ export default {
 
 
 
-.btn-add-new-task{
+/* .btn-add-new-task{
     border-radius: 0.25rem;
     box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     background-color: #ffffff;
     color:#80818cfa;
-}
+} */
 
+.task-color{
+
+}
 </style>

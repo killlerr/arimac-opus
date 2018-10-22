@@ -2,10 +2,10 @@
 <div class="pb-4">
 <b-card no-body class="img-cover">
   <b-tabs card>
-    <b-tab title="Task" active class="">
+    <b-tab title="Task" active class="bg-tab">
       <holder-tasks></holder-tasks>
     </b-tab>
-    <b-tab title="Attendence" class="">
+    <b-tab title="Attendence" class="bg-tab">
       <holder-attendence></holder-attendence>
     </b-tab>
   </b-tabs>
@@ -62,5 +62,9 @@ export default {
     border-bottom: 5.5px solid #ff5a4e;
     
     
+}
+
+.bg-tab{
+    background-color: rgba(229, 234, 239, 0.47059)
 }
 </style>
