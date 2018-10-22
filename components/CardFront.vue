@@ -10,20 +10,20 @@
                   </div>
                 </div>
               <div class="col-10 text-left">
-                <div class="pt-3">
-                <div class="row no-gutters task-name">
+                <div class="pl-3 pr-3 pb-3 pt-2">
+                  <div class="row no-gutters task-name">
                     {{taskName}}
-                </div>
-                <div class="row no-gutters project-name">
+                  </div>
+                  <div class="row no-gutters project-name">
                     {{projectName}} 
-                </div>                   
+                  </div>                   
                 </div>                  
               </div>
               </div>
               <div class="row card-footer no-gutters" v-bind:style="{'background-color':bgColor}">
                 <div class="col-6 text-left">
                   <div class="d-flex fex-column">
-                  <div class="pt-2">
+                  <div class="pt-1 pr-2">
                   <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-lg" />
                   </div>
 
@@ -106,7 +106,7 @@ export default {
 
 .task-name{
     /* font-weight: 600; */
-    font-size: 15px;
+    font-size: 0.938em;
     line-height: normal;
 
 }
@@ -115,11 +115,11 @@ export default {
   font-weight: bold;
   margin-top: 1em;
   color: #b8b8bb;
-  font-size: 11px;
+  font-size: 0.688em;
 }
 
 .days-left{
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
 .due-date{

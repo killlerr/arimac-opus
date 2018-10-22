@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid cf-p-0">
     <div class="row mx-1">
         <div class="col-lg-4 col-s-12 justify-content-center">
            <Column-tasks></Column-tasks>
@@ -30,6 +30,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+
+.cf-p-0, .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
 
 </style>
