@@ -6,7 +6,7 @@
         <div class="container-fluid py-3">
             <div class="row">
                 <div class="col-md-7">
-                    <div>
+                    <div class="pl-1 pr-1">
                         <b-card>
                             <div class="row">
                                 <div class="col-12">
@@ -18,16 +18,18 @@
                                   </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="pb-1 pl-3 pr-3"> 
-                                        <b-dropdown id="ddown1" text="Today I'm" class="dropdown-top">
+                            <div class="container-fluid pl-3 pr-3">
 
-                                        </b-dropdown>
+                                <div class="row">
+                                <div class="col-md-3">
+                                    <div class="pb-1">
+                                      <div class="pt-3">
+                                        <TodayI></TodayI>
+                                      </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="p-3">
+                                    <div class="pb-3 pt-3">
                                         <b-form-select id="exampleInput3"
                                         :options="attendenceCatagory"
                                         required
@@ -37,14 +39,16 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="p-3">
+                                    <div class="pb-3 pt-3">
                                         <Reusable-button label="Set" class="btn-login" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
                                     </div>
                                 </div>
+                                </div>
+
                             </div>
                         </b-card>                     
                     </div>
-                    <div class="pt-5">
+                    <div class="pt-5 pl-1 pr-1">
                         <b-card>
                             <div class="p-3">
                                 <blockquote class="blockquote text-left">
@@ -71,6 +75,7 @@
 
 <script>
 import ReusableButton from "~/components/ReusableButton.vue";
+import TodayI from "~/components/TodayI.vue"
 
 export default {
     data() {
@@ -88,7 +93,8 @@ export default {
         };
     },
     components:{
-        ReusableButton
+        ReusableButton,
+        TodayI
     },
     methods: {
         doSomething: function() {

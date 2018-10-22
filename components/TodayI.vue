@@ -1,15 +1,15 @@
 <template>
     <div class="border-today">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row no-gutters">
                 <div class="col-3">
-                    <div class="pr-3 pt-3">
-                        <p><fa :icon="fas.faMapPin" v-bind:style="{color:bgColor}" class="fa-2x"/></p>
+                    <div class="everything-center">
+                        <p><fa :icon="fas.faMapPin" v-bind:style="{color:bgColor}" class="fa-lg"/></p>
                     </div>                    
                 </div>
                 <div class="col-9 border-today-right">
-                    <div>
-                        <p>Today I'm</p>
+                    <div class="everything-center">
+                        <p class="t-a-c">Today I'm</p>
                     </div>
                 </div>
             </div>
@@ -37,13 +37,23 @@ export default {
 <style>
 .border-today{
     border-style: solid;
-    border-color: #80818cfa;
-    border-width: 4px;
+    border-color: rgba(128, 129, 140, 0.32);
+    border-width: 1px;
 }
 
 .border-today-right{
     border-left-style: solid;
-    border-color: #80818cfa;
+    border-color: rgba(128, 129, 140, 0.32);
     border-left-width: 2px;
 }
+
+.everything-center{
+  height: 38px;
+    margin-top: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center  
+
+}
+
 </style>
