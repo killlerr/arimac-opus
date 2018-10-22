@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-    <div class="row mx-3">
+    <div class="row mx-1">
         <div class="col-lg-4 col-s-12 justify-content-center">
            <Column-tasks></Column-tasks>
         </div>        

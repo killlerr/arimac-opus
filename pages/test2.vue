@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container-fluid p-3">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-7">
                     <div>
@@ -37,8 +37,22 @@
                                     </div>
                                 </div>
                             </div>
+                        </b-card>                     
+                    </div>
+                    <div class="pt-5">
+                        <b-card>
+                            <div>
+                                <blockquote class="blockquote text-left">
+                                    <p class="mb-0">Urgent message</p>
+                                    <footer class="blockquote-footer">Lorem ipsum dolor sit amet, consectetur</footer>
+                                </blockquote>                              
+                            </div>
+                            <div class="pt-3">
+                                <div class="form-group">
+                                    <textarea class="type-here form-control rounded-0" id="exampleFormControlTextarea1" rows="10" placeholder="Type here"></textarea>
+                                </div>
+                            </div>
                         </b-card>
-                      
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -102,5 +116,10 @@ export default {
 
 .btn-login{
     padding: 17px;
+}
+
+.type-here{
+    background-color: #ecedf3e0
+ 
 }
 </style>

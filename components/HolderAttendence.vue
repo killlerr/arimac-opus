@@ -1,128 +1,130 @@
 <template>
-  <div>
-          <div class="col-7">
+  <p>test</p>
+</template>
+<template>
+    <div>
+        <div class="container-fluid py-3">
             <div class="row">
-                <div class="top-box card-border">
-                  <blockquote class="blockquote text-right">
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
+                <div class="col-md-7">
+                    <div>
+                        <b-card>
+                            <div class="row">
+                                <div class="col-12">
+                                  <div class="p-3">
+                                  <blockquote class="blockquote text-left">
+                                    <p class="mb-0">What happen Today Attendance</p>
+                                    <footer class="blockquote-footer">Lorem ipsum dolor sit amet, consectetur</footer>
+                                  </blockquote>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="pb-1 pl-3 pr-3"> 
+                                        <b-dropdown id="ddown1" text="Today I'm" class="dropdown-top">
 
-            <div class="row">
-          <div class="col-4">
-
-</div>
-
-  <div class="col-4">
-    <b-form-select v-model="selected" :options="options" class="mb-3 r-h">
-      <template slot="first">
-        <!-- this slot appears above the options from 'options' prop -->
-        <option :value="null" disabled>-- Please select an option --</option>
-      </template>
-      <!-- these options will appear after the ones from 'options' prop -->
-      <option value="C">Option C</option>
-      <option value="D">Option D</option>
-    </b-form-select>
-    <!-- <div>Selected: <strong>{{ selected }}</strong></div> -->
-  </div>
-
-<div class="col-4">
-<Reusable-button label="set" :onClick="doSomething" class=" r-h text-center"></Reusable-button>
-</div>
+                                        </b-dropdown>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <b-form-select id="exampleInput3"
+                                        :options="attendenceCatagory"
+                                        required
+                                        v-model="form.attendenceCatagory"
+                                        class="attendence-slect">
+                                        </b-form-select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <Reusable-button label="Set" class="btn-login" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </b-card>                     
+                    </div>
+                    <div class="pt-5">
+                        <b-card>
+                            <div class="p-3">
+                                <blockquote class="blockquote text-left">
+                                    <p class="mb-0">Urgent message</p>
+                                    <footer class="blockquote-footer">Lorem ipsum dolor sit amet, consectetur</footer>
+                                </blockquote>                              
+                            </div>
+                            <div class="p-3">
+                                <div class="form-group">
+                                    <textarea class="type-here form-control rounded-0" id="exampleFormControlTextarea1" rows="10" placeholder="Type here"></textarea>
+                                </div>
+                            </div>
+                        </b-card>
+                    </div>
                 </div>
+                <div class="col-md-5">
 
-</div>
-
-                <div class="bottom-box card-border">
-<blockquote class="blockquote text-right">
-  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote> 
-
-  <div class="w-100 mx-6">
-    <b-form-textarea id="textarea1"
-                     v-model="text"
-                     placeholder="Type here"
-                     :rows="4"
-                     :max-rows="6">
-    </b-form-textarea>
-    <pre class="mt-3">{{ text }}</pre>
-  </div>
                 </div>
             </div>
-        </div>
-        <div class="col-5">
-
         </div>
     </div>
 </template>
 
-<script>
-import ReusableButton from '../components/ReusableButton.vue';
-import Vue from 'vue';
-import iView from 'iview';
 
-Vue.use(iView);
-import 'iview/dist/styles/iview.css';
+<script>
+import ReusableButton from "~/components/ReusableButton.vue";
 
 export default {
-
-
-  data () {
-    return {
-      text: '',
-      selected: null,
-      options: [
-        { value: 'A', text: 'Option A (from options prop)' },
-        { value: 'B', text: 'Option B (from options prop)' }
-      ]
-    }
-  },
-  components:{
-      ReusableButton
-  },
-  methods: {
-        doSomething: function () {
-            // <nuxt-link to="appTasks"></nuxt-link>
-            console.log("Clicked");
+    data() {
+        return {
+            btnBgColor: "#e74132",
+            btnColor: "#fff",
+            form:{
+                attendenceCatagory: null
+            },
+            attendenceCatagory: [
+                { text: 'Select an attendence catagory', value: null },
+                'Present', 'Absent', 'Working from home'
+            ],
+      show: true
+        };
+    },
+    components:{
+        ReusableButton
+    },
+    methods: {
+        doSomething: function() {
+            console.log("LogIn Clicked");
+            this.$router.push("homeUser");
         }
-    }  
+    }
 }
 </script>
 
-<style scoped>
 
-.card-border{
-        box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2);
-}
+<style>
 
-.top-box{
-    height: 40%;
+/* .drop-middle btn-group > .btn:first-child {
     width: 100%;
-    margin: 2rem 2rem 2rem;
-    padding: 1rem 2rem;
-}
+} */
 
-.bottom-box{
-    height: 60%;
+.dropdown-top, .btn-group > .btn:first-child {
     width: 100%;
-    margin: 2rem 2rem 2rem;
-    padding: 1rem 2rem;
-    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 2px;
+    border-radius: 0;
 }
 
-.r-h{
-    height: 3rem;
+.attendence-slect, .custom-select{
+    height: calc(2.25rem + 16px);
+    border-radius: 0;
 }
 
-.text-center{
-    /* Button text center */
-  display: inline-flex;
-  align-items: center; /* cross axis */
-  justify-content: center; /* main axis */
+.btn-login{
+    padding: 17px;
+}
 
-  line-height: 1; /* reset */
-  /* Button text center */
-    
+.type-here{
+    background-color: #ecedf3e0
+ 
 }
 </style>
