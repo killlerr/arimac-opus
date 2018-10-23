@@ -55,7 +55,8 @@ module.exports = {
           icons: ['fas']
         }
       ]
-    }]
+    }],
+    ['nuxt-sass-resources-loader', './assets/main.scss']
 
     
   ],
