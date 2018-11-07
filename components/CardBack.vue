@@ -11,9 +11,9 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <b-button class="filter-button" :class="{toggled: isToggled}" @click="isToggled = !isToggled">
-                        <slot>toggle</slot>
-                    </b-button>                  
+                    <div class="everything-center">
+                        <switches v-model="enabled"></switches>
+                    </div>                  
                 </div>
             </div>
             </div>
@@ -26,11 +26,17 @@
 </template>
 
 <script>
+import Switches from 'vue-switches';
+
 export default {
+    components: {
+        Switches
+    },
     data(){
         return{
             bgColor: '#ff5a4e',
-            isToggled: false
+            isToggled: false,
+            enabled: false
         }
     },
     methods: {
