@@ -7,7 +7,7 @@
     </div>
 
     
-        <div class="pb-2 pt-2">
+        <div class="pb-4 pt-2">
             <ModalTaskCardAdd></ModalTaskCardAdd>
         </div>
         <div class="margin-top-from-btn">

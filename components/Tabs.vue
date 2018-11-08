@@ -31,7 +31,7 @@ export default {
     box-shadow: 0px 1px 3px #efeeee, 0px 1px 2px #bfbfbf;
     padding: 0.5rem;
     border: 0;
-    height: auto;
+    height:auto;
 }
 
 .nav-link{
@@ -65,6 +65,8 @@ export default {
 }
 
 .bg-tab{
-    background-color: rgba(229, 234, 239, 0.47059)
+    background-color: rgba(229, 234, 239, 0.47059);
+    height: calc(100vh - 127.8px);
+
 }
 </style>
