@@ -5,8 +5,8 @@
     <div>
         <div class="container-fluid py-3">
             <div class="row">
-                <div class="col-md-7">
-                    <div class="pl-1 pr-1">
+                <div class="col-lg-7">
+                    <div class="pl-5 pr-1">
                         <b-card>
                             <div class="row">
                                 <div class="col-12">
@@ -48,7 +48,7 @@
                             </div>
                         </b-card>                     
                     </div>
-                    <div class="pt-5 pl-1 pr-1">
+                    <div class="pt-5 pl-5 pr-1">
                         <b-card>
                             <div class="p-3">
                                 <blockquote class="blockquote text-left">
@@ -64,8 +64,35 @@
                         </b-card>
                     </div>
                 </div>
-                <div class="col-md-5">
-
+                <div class="col-lg-5">
+                    <div class="pl-1 pr-5">
+                        <div class="row">
+                            <div class="col-6">
+                                <div>
+                                    <b-card class="p-3">
+                                        <h2>{{ selectedDate }}</h2>
+                                    </b-card>                                     
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div>
+                                    <b-card class="p-3">
+                                        <h2>{{ selectedDate }}</h2>
+                                    </b-card>                                     
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="pt-5 pl-1 pr-5">
+                        <!-- <b-card> -->
+                            <div id="app">
+                                <!-- <h2>{{ selectedDate }}</h2> -->
+                                <custom-datepicker 
+                                />
+                            </div>    
+                        <!-- </b-card> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,6 +104,8 @@
 import ReusableButton from "~/components/ReusableButton.vue";
 import TodayI from "~/components/TodayI.vue"
 
+import CustomDatepicker from 'vue-custom-datepicker'
+import moment from 'moment'
 export default {
     data() {
         return {
@@ -89,18 +118,30 @@ export default {
                 { text: 'Select an attendence catagory', value: null },
                 'Present', 'Absent', 'Working from home'
             ],
-      show: true
+      show: true,
+      selectedDate: moment().format('YYYY-MM-DD'),
+    //   wrapperStyles: { width: '325px' },
+    //   primaryColor: "#0918bc",
+    //   limits: {
+    //     start: '2017-04-02',
+    //     end: '2017-05-22'
+    //   }
         };
     },
     components:{
         ReusableButton,
-        TodayI
+        TodayI,
+        'custom-datepicker': CustomDatepicker
+
     },
     methods: {
         doSomething: function() {
             console.log("LogIn Clicked");
             this.$router.push("homeUser");
-        }
+        },
+        setDate(date) {
+            this.selectedDate = date
+        }        
     }
 }
 </script>

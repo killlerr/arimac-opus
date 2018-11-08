@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="center-switch">
-                                        <switches v-model="enabled"></switches>
+                                        <!-- <switches v-model="enabled"></switches> -->
                                     </div>                  
                                 </div>
                             </div>
@@ -72,13 +72,13 @@
 </template>
 
 <script>
-import Switches from 'vue-switches';
+// import Switches from 'vue-switches';
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export default {
     components: {
-        Switches
+        // Switches
     },
     data(){
         return{
@@ -184,6 +184,29 @@ export default {
     margin: 50px;
     justify-content: center;
 }
+
+/* Switch */
+  /* .vue-switcher-theme--default.vue-switcher-color--default div {
+    background-color: #fff; }
+    .vue-switcher-theme--default.vue-switcher-color--default div:after {
+      background-color: #ff5a4e; }
+  .vue-switcher-theme--default.vue-switcher-color--default.vue-switcher--unchecked div {
+    background-color: #fff; }
+    .vue-switcher-theme--default.vue-switcher-color--default.vue-switcher--unchecked div:after {
+      background-color: #ff5a4e;}
+
+  .vue-switcher div {
+    height: 2.8rem;
+    width: 10rem;
+    box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2); }
+    .vue-switcher div:after {
+      height: 2.4rem;
+      width: 6.6rem;
+      top: 0.2rem;
+      left: 4rem;
+      margin-left: -0.8rem;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1); } */
+/* Switch */
 /* Card-back */
 
 

@@ -57,7 +57,7 @@
 import ReusableButton from '~/components/ReusableButton.vue'
 export default {
     components:{
-        ReusableButton
+        ReusableButton,
     },
     methods: {
         doSomething: function() {
