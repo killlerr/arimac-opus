@@ -1,84 +1,84 @@
 <template>
     <div>
         <div class="flip-card mb-4">
-        <div class="flip-card-inner">
-            <!-- Card-front -->
-            <div class="flip-card-front">
-                <div class="">
-                    <b-card class="card-front fit-content" @click="onAnswer">
-                        <div class="card-content">
-                        <div class="row card-header no-gutters">
-                            <div class="col-2 text-right">
-                            <div class="pr-3 pt-3">
-                                <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}" class="fa-lg"/></p>
-                            </div>
-                            </div>
-                        <div class="col-10 text-left">
-                            <div class="pl-3 pr-3 pb-3 pt-2">
-                            <div class="row no-gutters task-name">
-                                {{taskName}}
-                            </div>
-                            <div class="row no-gutters project-name">
-                                {{projectName}} 
-                            </div>                   
-                            </div>                  
-                        </div>
-                        </div>
-                        <div class="row card-footer no-gutters" v-bind:style="{'background-color':bgColor}">
-                            <div class="col-6 text-left">
-                            <div class="d-flex fex-column">
-                            <div class="pt-1 pr-2">
-                            <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-sm" />
-                            </div>
-
-                            <div class="pl-2 days-left pt-1">{{daysLeft}}</div>
-                            </div>
-                            </div>
-                            <div class="col-6 text-right due-date pt-2">
-                            {{dueDate}}
-                            </div>
-                        </div>
-                        </div>
-                    </b-card>
-                </div>
-            </div>
-            <!-- Card-back -->
-            <div class="flip-card-back">
-                <div>
+            <div class="flip-card-inner">
+                <!-- Card-front -->
+                <div class="flip-card-front">
                     <div class="">
-                        <b-card class="card-back" v-bind:style="{'background-color':bgColor}" @click="onNextQuestion">
-                            <div class="col">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="pt-4 pl-1 txt-complete">
-                                        <h4>Completed Card</h4>
-                                        <p class="info-complete">Project Number Two Lorem ip sumdolor sit amet,Project Number Two Lorem ipsum dolor sit amet</p>
-                                    </div>
+                        <b-card class="card-front fit-content" @click="onAnswer">
+                            <div class="card-content">
+                            <div class="row card-header no-gutters">
+                                <div class="col-2 text-right">
+                                <div class="pr-3 pt-3">
+                                    <p><fa :icon="fas.faCommentAlt" v-bind:style="{color:bgColor}" class="fa-lg"/></p>
                                 </div>
-                                <div class="col-6">
-                                    <div class="center-switch">
-                                        <!-- <switches v-model="enabled"></switches> -->
-                                    </div>                  
+                                </div>
+                            <div class="col-10 text-left">
+                                <div class="pl-3 pr-3 pb-3 pt-2">
+                                <div class="row no-gutters task-name">
+                                    {{taskName}}
+                                </div>
+                                <div class="row no-gutters project-name">
+                                    {{projectName}} 
+                                </div>                   
+                                </div>                  
+                            </div>
+                            </div>
+                            <div class="row card-footer no-gutters" v-bind:style="{'background-color':bgColor}">
+                                <div class="col-6 text-left">
+                                <div class="d-flex fex-column">
+                                <div class="pt-1 pr-2">
+                                <fa :icon="fas.faExclamationTriangle" style="{color: #ffffff}" class="fa-sm" />
+                                </div>
+
+                                <div class="pl-2 days-left pt-1">{{daysLeft}}</div>
+                                </div>
+                                </div>
+                                <div class="col-6 text-right due-date pt-2">
+                                {{dueDate}}
                                 </div>
                             </div>
                             </div>
                         </b-card>
                     </div>
                 </div>
+                <!-- Card-back -->
+                <div class="flip-card-back">
+                    <div>
+                        <div class="">
+                            <b-card class="card-back" v-bind:style="{'background-color':bgColor}" @click="onNextQuestion">
+                                <div class="col">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="pt-4 pl-1 txt-complete">
+                                            <h4>Completed Card</h4>
+                                            <p class="info-complete">Project Number Two Lorem ip sumdolor sit amet,Project Number Two Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="center-switch">
+                                            <switches v-model="enabled"></switches>
+                                        </div>                  
+                                    </div>
+                                </div>
+                                </div>
+                            </b-card>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </template>
 
 <script>
-// import Switches from 'vue-switches';
+import Switches from 'vue-switches';
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export default {
     components: {
-        // Switches
+        Switches
     },
     data(){
         return{
@@ -124,7 +124,7 @@ export default {
 .flip-card-inner {
   position: relative;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -186,14 +186,15 @@ export default {
 }
 
 /* Switch */
-  /* .vue-switcher-theme--default.vue-switcher-color--default div {
+  .vue-switcher-theme--default.vue-switcher-color--default div {
     background-color: #fff; }
     .vue-switcher-theme--default.vue-switcher-color--default div:after {
       background-color: #ff5a4e; }
   .vue-switcher-theme--default.vue-switcher-color--default.vue-switcher--unchecked div {
     background-color: #fff; }
     .vue-switcher-theme--default.vue-switcher-color--default.vue-switcher--unchecked div:after {
-      background-color: #ff5a4e;}
+      background-color: #ff5a4e;
+      left: 1rem;}
 
   .vue-switcher div {
     height: 2.8rem;
@@ -205,7 +206,7 @@ export default {
       top: 0.2rem;
       left: 4rem;
       margin-left: -0.8rem;
-      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1); } */
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1); }
 /* Switch */
 /* Card-back */
 
@@ -224,6 +225,7 @@ export default {
     border-radius: 0.25rem;
     box-shadow: 0 0.05rem 0.2rem 0 rgba(0, 0, 0, 0.2);
     word-wrap: break-word;
+    border: 0;
 }
 
 .card-header{
