@@ -21,7 +21,8 @@
     "nuxt-fontawesome": "^0.3.0",
     "react-native-vector-icons": "^6.0.0",
     "vue-custom-datepicker": "^1.1.6",
-    "vue-switches": "^2.0.1"
+    "vue-switches": "^2.0.1",
+    "vue2-datepicker": "^2.6.2"
   },
   "devDependencies": {
     "node-sass": "^4.9.4",
