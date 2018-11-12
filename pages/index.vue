@@ -74,11 +74,11 @@ html,body
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    /* overflow-x: hidden;  */
 }
 
 body {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 section, .bg-left, .bg-right{

@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-      <switches v-model="enabled"></switches>
+      <!-- <switches v-model="enabled"></switches> -->
   </div>
 </template>
 
 <script>
-import Switches from 'vue-switches';
+// import Switches from 'vue-switches';
 
 export default {
     components: {
-        Switches
+        // Switches
     },
 
     data () {

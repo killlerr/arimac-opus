@@ -58,14 +58,14 @@
                             </div>
                             <div class="p-3">
                                 <div class="form-group">
-                                    <textarea class="type-here form-control rounded-0" id="exampleFormControlTextarea1" rows="7" placeholder="Type here"></textarea>
+                                    <textarea class="type-here form-control rounded-0" id="exampleFormControlTextarea1" rows="5" placeholder="Type here"></textarea>
                                 </div>
                             </div>
                         </b-card>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="pl-1 pr-5">
+                    <!-- <div class="pl-1 pr-5">
                         <div class="row">
                             <div class="col-6">
                                 <div>
@@ -83,13 +83,13 @@
                             </div>
                         </div>
                     
-                    </div>
-                    <div class="pt-5 pl-1 pr-5">
+                    </div> -->
+                    <div class="pl-1 pr-5">
                         <!-- <b-card> -->
                             <div id="app">
-                                <!-- <h2>{{ selectedDate }}</h2> -->
-                                <custom-datepicker 
-                                />
+                                <!-- <custom-datepicker 
+                                /> -->
+                                <EditedDatepicker></EditedDatepicker>
                             </div>    
                         <!-- </b-card> -->
                     </div>
@@ -103,6 +103,7 @@
 <script>
 import ReusableButton from "~/components/ReusableButton.vue";
 import TodayI from "~/components/TodayI.vue"
+import EditedDatepicker from "~/components/EditedDatepicker"
 
 import CustomDatepicker from 'vue-custom-datepicker'
 import moment from 'moment'
@@ -131,8 +132,8 @@ export default {
     components:{
         ReusableButton,
         TodayI,
-        'custom-datepicker': CustomDatepicker
-
+        'custom-datepicker': CustomDatepicker,
+        EditedDatepicker
     },
     methods: {
         doSomething: function() {

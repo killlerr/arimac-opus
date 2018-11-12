@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header></Header>
-        <tabs></tabs>
+        <tabs class="no-padding"></tabs>
     </div>
 
 </template>
@@ -26,5 +26,9 @@ export default {
 
 .bg-test{
     background-color:red;
+}
+
+.no-padding{
+    padding: 0 !important;
 }
 </style>
