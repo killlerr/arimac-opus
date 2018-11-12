@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-6">
                     <div class="everything-center">
-                        <switches v-model="enabled"></switches>
+                        <!-- <switches v-model="enabled"></switches> -->
                     </div>                  
                 </div>
             </div>
@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import Switches from 'vue-switches';
+// import Switches from 'vue-switches';
 
 export default {
     components: {
-        Switches
+        // Switches
     },
     data(){
         return{

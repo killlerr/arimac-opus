@@ -23,24 +23,18 @@
                         <div class="py-2">
                             <label for="task-name"><small>Name</small></label>
                             <b-form-input type="text"
+                            class="form-modal"
                             placeholder="Add task name here"
                             id="task-name"></b-form-input>
                         </div>
                         <div class="py-2">
                             <!-- input-select -->
                             <label for="task-name2"><small>Project Name</small></label>
-                            <!-- <b-form-input type="text"
-                            placeholder="Add task name here"
-                            id="task-name2"></b-form-input> -->
-                            <cool-select
-
-                            />
+                            <Vselect class="form-modal-date-picker"></Vselect>
                         </div>
                         <div class="py-2">
                             <label for="task-name3"><small>Due date</small></label><br>
-                            <!-- <b-form-input type="text"
-                            placeholder="Add task name here"
-                            id="task-name3"></b-form-input> --><date-picker v-model="time1" :first-day-of-week="1" lang="en"></date-picker>
+                            <date-picker v-model="time1" :first-day-of-week="1" lang="en" class="form-modal-date-picker"></date-picker>
                         </div>   
                     </form>
                         <div class="pt-4 pb-5">
@@ -60,7 +54,8 @@
 <script>
 import ReusableButton from '~/components/ReusableButton.vue'
 import DatePicker from 'vue2-datepicker'
-import { CoolSelect } from 'vue-cool-select'
+import Vselect from 'vue-select'
+// import { CoolSelect } from 'vue-cool-select'
 
 export default {   
     data() {
@@ -86,7 +81,8 @@ export default {
     components:{
         ReusableButton,
         DatePicker,
-        CoolSelect
+        Vselect
+        // CoolSelect
     },
     methods: {
         doSomething: function() {
@@ -145,4 +141,35 @@ export default {
 }
 
 /* Date-picker */
+
+.form-modal{
+    background-color: #e8e8e8;
+    padding: 1.5rem 0.75rem;
+    font-size: 0.8rem;
+    border: 0px solid #000000;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
+}
+
+.form-modal-date-picker{
+    background-color: #e8e8e8;
+    font-size: 0.8rem;
+    border: 0px solid #000000;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
+}
+
+.form-modal-date-picker .mx-input{
+    background-color: #e8e8e8;
+    font-size: 0.8rem;
+    border: 0px solid #000000;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
+    padding: 1.5rem 0.75rem;
+}
+.form-modal-date-picker .mx-calendar-icon{
+    background-color: #e8e8e8;
+}
+
+.form-modal-date-picker .dropdown-toggle{
+    border: 0;
+}
+
 </style>

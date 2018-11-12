@@ -39,6 +39,7 @@ module.exports = {
   */
   plugins: [
     // {src: '~plugins/iview', ssr: true}
+    '~/plugins/vue-switches.js'
   ],
 
   /*
