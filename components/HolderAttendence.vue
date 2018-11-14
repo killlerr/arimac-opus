@@ -3,10 +3,10 @@
 </template>
 <template>
     <div>
-        <div class="container-fluid py-3">
+        <div class="container-fluid py-3 px-3">
             <div class="row">
                 <div class="col-lg-7">
-                    <div class="pl-5 pr-1">
+                    <div class="pr-1">
                         <b-card>
                             <div class="row">
                                 <div class="col-12">
@@ -48,7 +48,7 @@
                             </div>
                         </b-card>                     
                     </div>
-                    <div class="pt-5 pl-5 pr-1">
+                    <div class="pt-5 pr-1">
                         <b-card>
                             <div class="p-3">
                                 <blockquote class="blockquote text-left">
@@ -84,7 +84,7 @@
                         </div>
                     
                     </div> -->
-                    <div class="pl-1 pr-5">
+                    <div class="pl-1">
                         <!-- <b-card> -->
                             <div id="app">
                                 <!-- <custom-datepicker 
