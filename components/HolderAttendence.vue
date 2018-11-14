@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pb-3 pt-3">
-                                        <Reusable-button label="Set" class="btn-login" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
+                                        <Reusable-button label="Set" class="btn-login--padding" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
                                     </div>
                                 </div>
                                 </div>
@@ -167,7 +167,7 @@ export default {
     border-radius: 0;
 }
 
-.btn-login{
+.btn-login--padding{
     padding: 17px;
 }
 
