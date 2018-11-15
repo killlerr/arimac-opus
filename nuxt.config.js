@@ -46,6 +46,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
     'bootstrap-vue/nuxt',
 
     // Or if you have custom bootstrap CSS...
@@ -64,6 +65,9 @@ module.exports = {
 
     
   ],
+  axios: {
+    // proxyHeaders: false
+  },
 
   /*
   ** Build configuration

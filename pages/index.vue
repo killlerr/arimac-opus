@@ -15,12 +15,12 @@
                         </div>
                         <div class="row justify-content-md-center my-4">
                             <div class="form-group">
-                                <ReusableInput type="text" value="" placeholder="email" @inputEvent="inputEvent"></ReusableInput>
-                                <ReusableInput type="password" value="" placeholder="password" @inputEvent="inputEvent"></ReusableInput>
+                                <ReusableInput active type="text" v-model="login.email" placeholder="email" @inputEvent="inputEvent"></ReusableInput>
+                                <ReusableInput type="password" v-model="login.password" placeholder="password" @inputEvent="inputEvent"></ReusableInput>
                             </div>
                         </div>
                         <div class="row justify-content-md-center">
-                            <Reusable-button label="Login" class="btn-login" :onClick="doSomething" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
+                            <Reusable-button label="Login" class="btn-login" :onClick="onLogin" v-bind:style="{'background-color':btnBgColor, color:btnColor}"></Reusable-button>
                         </div>
                         <div class="d-flex justify-content-center align-items-center d-block d-md-none fixed-bottom">
                           <p class="text-muted copyright mx-3">Copyright © 2018 Arimac Lanka. All rights reserved.</p>
@@ -35,28 +35,65 @@
 
 <script>
 import ReusableButton from "~/components/ReusableButton.vue";
-import ReusableInput from "~/components/ReusableInput.vue"
+import ReusableInput from "~/components/ReusableInput.vue";
 
 export default {
   data() {
     return {
       btnBgColor: "#e74132",
-      btnColor: "#fff"
+      btnColor: "#fff",
+      login:{
+        email:'',
+        password:''  
+      }
     };
   },
-
   components: {
     ReusableButton,
     ReusableInput
   },
   methods: {
-    doSomething: function() {
+
+      onLogin: function() {
       console.log("LogIn Clicked");
-      this.$router.push("homeUser");
+      // this.$router.push("homeUser");
+      const loginData ={
+        email: this.login.email,
+        password: this.login.password
+      }
+      console.log(loginData)
+      this.$axios.post('http://opus-api.devops.arimac.xyz/webapi/auth/login', loginData)
+                .then(response => {
+                    console.log(response.data)
+                    console.log(response.status)
+                    console.log(response.headers)
+                    console.log(response.message)
+                    if(response.status===200){
+                      this.$router.push("homeUser");
+                    }
+                })
+  .catch(function (error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (error.request) {
+      // The request was made but no response was received
+      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+      // http.ClientRequest in node.js
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log('Error', error.message);
+    }
+    console.log(error.config);
+  });
     },
-        inputEvent(e) {
+    inputEvent(e) {
             // console.log(e);
-        }
+    }
   }
 };
 </script>
@@ -81,7 +118,7 @@ body {
   /* overflow-y: hidden; */
 }
 
-section, .bg-left, .bg-right{
+.bg-left, .bg-right{
   height: 100vh;
 }
 

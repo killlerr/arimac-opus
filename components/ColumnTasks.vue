@@ -44,7 +44,12 @@ export default {
         doSomething: function () {
             console.log("Added New Card")
         }
-    }
+    },
+    // created(){
+    //     this.$axios.get('http://opus-api.devops.arimac.xyz/webapi/tasks')
+    //         .then(res => console.log(res))
+    //         .catch(error => console.log(error))
+    // }
 }
 
 

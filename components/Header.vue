@@ -16,7 +16,7 @@
                   <b-nav-item href="profile" class="p-0">
                     <div class="row no-gutters">
                       <div class="col-6">
-                        <img src="img-profile-picture.jpeg" class="img-circle img-profile" alt="Cinque Terre">
+                        <img src="img-profile-picture.jpeg" class="img-circle img-profile-nav" alt="Cinque Terre">
                       </div>
                        <div class=""> <!--col-6 flex-column name-box d-none d-sm-block -->
                         <div class="text-light mx-2 user-name">{{userName}}</div>
@@ -27,8 +27,8 @@
                 </div>
                 <!-- profile -->
               </template>
-              <b-dropdown-item href="settings">Profile</b-dropdown-item>
-              <b-dropdown-item href="/">Change Password</b-dropdown-item>
+              <b-dropdown-item href="profile">Profile</b-dropdown-item>
+              <b-dropdown-item href="/changePassword">Change Password</b-dropdown-item>
               <b-dropdown-item href="/">Logout</b-dropdown-item>
             </b-nav-item-dropdown>
       </b-navbar-nav>
@@ -71,7 +71,7 @@ export default {
   width: auto;
 }
 
-.img-profile {
+.img-profile-nav {
   height: 3rem;
   width: auto;
   align-content: center;
