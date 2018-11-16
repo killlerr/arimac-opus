@@ -1,7 +1,7 @@
 <template>
     <div class="input-field">
         <input
-            class="form-control-opus mt-4"
+            class="input-reusable mt-4"
             :placeholder="placeholder"
             :value="value"
             @change="$emit('input', $event.target.value)">
@@ -22,7 +22,7 @@ export default {
 
 <style>
 
-.form-control-opus{
+.input-reusable{
 
     width: 100%;
     font-family:sans-serif;
@@ -35,8 +35,9 @@ export default {
 
 }
 
-.form-control-opus:focus{
-    /* border-left: 0.5rem solid #ff5a4e */
+.input-reusable:focus{
+    border-left: 0.4rem solid #ff5a4e;
+    outline: 0;
 }
 
 </style>

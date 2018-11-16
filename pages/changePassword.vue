@@ -4,7 +4,7 @@
         <div class="container center-justify-everything mt-5">
             <b-card class="my-3 card--width">
                 <div class="p-4">
-                    <h5>Change Password</h5>
+                    <p class="blockquote text-left p--opus-heading-color">Change Password</p>
                     <div class="profile-hl"></div>
                 </div>
                 <div class="px-4">

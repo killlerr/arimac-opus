@@ -24,6 +24,7 @@ export default {
     letter-spacing: 1px;
     font-weight: bold;
     border-style: none;
+    background-color: #ff5a4e;
 }
 
 </style>
